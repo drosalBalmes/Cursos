@@ -2,6 +2,7 @@ package com.balmes.model;
 
 import javax.persistence.*;
 @Entity
+@Table
 public class Estudiant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
