@@ -1,16 +1,13 @@
 package com.balmes.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class Curs {
 
     @Id
-    @Column(name = "cursId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cursId;
     @Column(name = "titolCurs")
     private String titolCurs;
@@ -78,5 +75,10 @@ public class Curs {
 
     public void setEstudiants(List<Estudiant> estudiants) {
         this.estudiants = estudiants;
+    }
+
+    @Override
+    public String toString() {
+        return titolCurs;
     }
 }
